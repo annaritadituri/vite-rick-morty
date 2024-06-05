@@ -1,2 +1,8 @@
 @use './partials/reset' as *;
 @use './partials/variables' as *;
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+    font-family: $font_text;
+    letter-spacing: 3px;
+}
