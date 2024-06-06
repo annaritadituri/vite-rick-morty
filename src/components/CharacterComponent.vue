@@ -25,6 +25,7 @@
 <style scoped>
 
 img {
+    width: 100%;
     box-shadow: 0px 0px 19px 6px rgba(145,145,145,0.39)
 }
 
