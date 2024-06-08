@@ -6,7 +6,7 @@
 </script>
 
 <template>
-    <h1 class="fw-bold py-5">Rick and Morty App</h1>
+    <h1 class="fw-bold py-4">Rick and Morty App</h1>
 </template>
 
 <style scoped>

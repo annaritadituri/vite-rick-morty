@@ -1,15 +1,14 @@
 <script>
 
     import HeaderComponent from './components/HeaderComponent.vue';
-    //import SearchBar from './components/SearchBar.vue';
-    import CharactersList from './components/CharactersList.vue';
+    import Main from './components/AppMain.vue';
 
     export default {
         name: 'MyApp',
         components: {
             HeaderComponent,
-            //SearchBar,
-            CharactersList,
+            Main,
+
         },
     }
 
@@ -20,7 +19,7 @@
     <div class="container text-center">
 
         <HeaderComponent />
-        <CharactersList />
+        <Main />
 
     </div>
 

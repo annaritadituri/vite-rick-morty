@@ -2,36 +2,33 @@
 
     import CharacterComponent from './CharacterComponent.vue'
     import { store } from '../store';
-    import axios from 'axios';
 
     export default {
         name: 'Characters List',
-        components: {
-            CharacterComponent,
-        },
 
         data() {
 
             return {
                 store,
-            }
+            };
 
         },
+        
+        components: {
+            CharacterComponent,
+        },
 
-        created() {
+        emits: ['prev', 'next'],
 
-            axios.get(this.store.apiUrl).then( (response) => {
-                this.store.info = response.data.info;
-                this.store.results = response.data.results;
-            });
-        }
     }
 
 </script>
 
 <template>
 
-    <div class="row">
+    <p v-if="store.loading === true">Caricamento in corso...</p>
+
+    <div class="row" v-else>
 
         <div 
             class="col-3"
@@ -50,7 +47,16 @@
 
     </div>
 
-    <p class="fw-bold">Found 20 of {{ store.info.count }} characters</p>
+    <div class="found">
+        
+    </div>
+
+    <p class="fw-bold">Found {{ store.info.count }} characters</p>
+
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link"><button class="border-0 bg-transparent" @click="$emit('prev')">Previous</button></a></li>
+        <li class="page-item"><a class="page-link"><button class="border-0 bg-transparent" @click="$emit('next')">Next</button></a></li>
+    </ul>
 
 </template>
 
